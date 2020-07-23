@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6-9 Assignment</title>
+    <script src = "app.js"></script>
+    <style>
+        
+        h1{
+        text-align: center;
+        font-size: 40px;
+        color: red;
+        }
+        
+        
+        table{
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 470px;
+        }
+        
+        
+        td{
+        width: 470px;
+        border: none;
+        font-size: 20px;
+        color: red;
+        font-family: free-sans;
+        }
+        
+        td:hover{
+        border:4px solid #fff;
+        }
+        
+        td:active{
+        border:5px solid purple;
+        }
+        
+        </style>
+        <script>
+        rollno=prompt("Enter Your Roll No","");
+        stname=prompt("Enter Your Name","")
+        english=prompt("Enter Your English Marks","");
+        urdu=prompt("Enter Your Urdu Marks","");
+        computer=prompt("Enter Your Computer Marks","");
+        total=300;
+        ob=eval(english)+eval(urdu)+eval(computer);
+        per=ob*100/total;
+        avg=ob/3;
+        if(per>=33)
+        {
+        result="Pass";
+        }
+        else
+        {
+        result="Fail";
+        }
+        
+        if(per>=90)
+        {
+        grade="A";
+        }
+        else if(per>=80)
+        {
+        grade="B";
+        }
+        else if(per>=70)
+        {
+        grade="C";
+        }
+        else
+        {
+        grade="D";
+        }
+        confirm=confirm("Are You Sure  !");
+        </script>
+        </head>
+        <body>
+        
+        <script>
+         if(confirm==true)
+         {
+        document.write("<h1>Result Card</h1><table align='center'><tr><td>Roll No</td><td>" +
+         rollno + "</td></tr><tr><td>Name</td><td>" + stname + "</td></tr><tr><td>English</td><td>" +
+         english + "</td></tr><tr><td>Urdu</td><td>" + urdu + "</td></tr><tr><td>Computer</td><td>" +
+         computer + "</td></tr><tr><td>Total Marks</td><td>" + total + "</td></tr><tr><td>Obtained Marks</td><td>" + 
+        ob + "</td></tr><tr><td>Percentage</td><td>" + per + "</td></tr><tr><td>Average Marks</td><td>" + 
+        avg + "</td></tr><tr><td>Pass/Fail</td><td>" + result + "</td></tr><tr><td>Grade</td><td>" + 
+        grade + "</td></tr></table>");
+        }
+        else
+        {
+        document.write("<h1 align='center'><font color='red'>Result Not Found</font></h1>");
+        }
+        </script>
+
+</body>
+</html
+        

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9-11 Assignment</title>
+    <style>
+        table {
+            border-top: 1px solid rgb(197, 197, 197);
+            border-bottom: 1px solid rgb(197, 197, 197);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 40px;
+            border-top-left-radius: 40px;
+        }
+
+
+
+        h1 {
+            text-align: center;
+            font-size: 40px;
+            color: red;
+        }
+
+
+        table {
+            background-color: black;
+            color: white;
+            text-align: center;
+            width: 470px;
+        }
+
+
+        td {
+            width: 470px;
+            border: none;
+            font-size: 20px;
+            color: red;
+            font-family: free-sans;
+        }
+
+        td:hover {
+            border-bottom: 1px solid rgb(212, 203, 203);
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        td:active {
+            border: 5px solid purple;
+        }
+
+        .caculator {
+            width: 20vw;
+            height: 300px;
+            background-color: rgb(238, 235, 235);
+            margin: 0 auto;
+            border-radius: 20px;
+        }
+
+        .caculator h3 {
+            color: #000;
+            text-align: center;
+
+        }
+
+        .caculator>input {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-left: 2.5%;
+            border: none;
+            border-radius: 10px;
+            height: 25px;
+        }
+
+        .caculator>button {
+            cursor: pointer;
+            width: 30%;
+            margin-top: 20px;
+            margin-left: 10%;
+        }
+    </style>
+
+    <script src="app.js"></script>
+
+
+</head>
+
+<body>
+
+    <script>
+        rollno = prompt("Enter Your Roll No", "");
+        stname = prompt("Enter Your Name", "")
+        english = prompt("Enter Your English Marks", "");
+        urdu = prompt("Enter Your Urdu Marks", "");
+        computer = prompt("Enter Your Computer Marks", "");
+        total = 300;
+        ob = eval(english) + eval(urdu) + eval(computer);
+        per = ob * 100 / total;
+        avg = ob / 3;
+        if (per >= 33) {
+            result = "Pass";
+        }
+        else {
+            result = "Fail";
+        }
+
+        if (per >= 90) {
+            grade = "A";
+        }
+        else if (per >= 80) {
+            grade = "B";
+        }
+        else if (per >= 70) {
+            grade = "C";
+        }
+        else {
+            grade = "D";
+        }
+        confirm = confirm("Are You Sure  !");
+    </script>
+
+
+    <script>
+
+        if (confirm == true) {
+            document.write("<h1>Marks Sheet</h1><table align='center'><tr><td>Roll No</td><td>" +
+                rollno + "</td></tr><tr><td>Name</td><td>" + stname + "</td></tr><tr><td>English</td><td>" +
+                english + "</td></tr><tr><td>Urdu</td><td>" + urdu + "</td></tr><tr><td>Computer</td><td>" +
+                computer + "</td></tr><tr><td>Total Marks</td><td>" + total + "</td></tr><tr><td>Obtained Marks</td><td>" +
+                ob + "</td></tr><tr><td>Percentage</td><td>" + per + "</td></tr><tr><td>Average Marks</td><td>" +
+                avg + "</td></tr><tr><td>Pass/Fail</td><td>" + result + "</td></tr><tr><td>Grade</td><td>" +
+                grade + "</td></tr></table>");
+        }
+        else {
+            document.write("<h1 align='center'><font color='red'>Result Not Found</font></h1>");
+        }
+    </script>
+
+
+    <br /><br /><br /><br />
+
+    <center>
+        Enter A Number: <input id="a"><br>
+        <input type="button" onclick="check()" value="CHECK">
+        </button>
+    </center>
+
+
+    <br /><br /><br /><br />
+
+
+    <div class="caculator">
+        <h3>CACULATOR</h3>
+        <input id="First_value" type="number" placeholder="First value">
+        <input id="sign" type="text" placeholder="sign eg: + , /, * , %">
+        <input id="second_value" type="number" placeholder="second value">
+        <button id="btn" onclick="caculate();">Caculator</button>
+        <br>
+        <br>
+        <div style="text-align: center;"> ANSWER: <span id="answer"></span></div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function caculate() {
+        var First_value = document.getElementById("First_value").value;
+        var sign = document.getElementById("sign").value;
+        var second_value = document.getElementById("second_value").value;
+
+        if (sign === '+') {
+
+            var answer = +First_value + +second_value;
+            document.getElementById("answer").innerHTML += answer;
+        }
+
+        else if (sign === '-') {
+            var answer = First_value - second_value;
+            document.getElementById("answer").innerHTML += answer;
+        }
+
+        else if (sign === '/') {
+            var answer = First_value / second_value;
+            document.getElementById("answer").innerHTML += answer;
+        }
+
+        else if (sign === '*') {
+            var answer = First_value * second_value;
+            document.getElementById("answer").innerHTML += answer;
+        }
+
+        else if (sign === '%') {
+            var answer = First_value % second_value;
+            document.getElementById("answer").innerHTML += answer;
+        }
+
+        else {
+            document.getElementById("answer").innerHTML = 'Please use a valid arthmetic sign';
+        }
+    }
+</script>
